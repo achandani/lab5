@@ -5,8 +5,8 @@ from passlib.hash import sha256_crypt
 from flask_heroku import Heroku
 
 app = Flask(__name__)
-heroku = Heroku(app)
 app.secret_key = "s14a"
+heroku = Heroku(app)
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/lab_5'
 
