@@ -2,11 +2,13 @@ from flask import Flask, flash, render_template, request, url_for, redirect, jso
 from models import db, User, Post
 from forms import SignupForm, LoginForm, NewpostForm
 from passlib.hash import sha256_crypt
+from flask_heroku import Heroku
 
 app = Flask(__name__)
+heroku = Heroku(app)
 app.secret_key = "s14a"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/lab_5'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/lab_5'
 
 db.init_app(app)
 
